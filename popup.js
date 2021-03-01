@@ -9,7 +9,7 @@ const handleClick = () => {
   chrome.storage.sync.get("intervalId", ({ intervalId }) => {
     if (!intervalId) {
       intervalId = setInterval(() => {
-        chrome.tabs.executeScript(null, { file: "custom.js" });
+        chrome.tabs.executeScript(null, { file: "domScript.js" });
       }, 1000);
     } else {
       clearInterval(intervalId);
@@ -23,11 +23,11 @@ const handleClick = () => {
 const changeButtonStyle = (result) => {
   if (result) {
     start.style.backgroundColor = red;
-    document.body.style.borderBottom = "7px solid " + green;
+    document.body.style.borderBottom = "17px solid " + green;
     start.innerText = "stop";
   } else {
     start.style.backgroundColor = green;
-    document.body.style.borderBottom = "7px solid " + red;
+    document.body.style.borderBottom = "17px solid " + red;
     start.innerText = "start";
   }
 };
