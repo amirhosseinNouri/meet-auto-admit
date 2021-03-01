@@ -1,55 +1,50 @@
 const red = "#DA3F2C";
 const green = "#2C645B";
 
-let intervalId;
+const saveId = (value) => {
+  chrome.storage.sync.set({ intervalId: value }, function () {
+    //   alert('saved')
+  });
+};
+
 const restoreId = () => {
-  intervalId = JSON.parse(localStorage.getItem("intervalId"));
-};
+  chrome.storage.sync.get("intervalId", (data) => {
+    let { intervalId } = data;
 
-const saveId = () => {
-  localStorage.setItem("intervalId", JSON.stringify(intervalId));
-};
-
-const accept = () => {
-  restoreId();
-
-  if (!intervalId) {
-    intervalId = setInterval(() => {
-      let elems = [...document.querySelectorAll(".CwaK9")];
-      if (elems.length > 0) {
-        elems[1].click();
-      }
-    }, 1000);
-  } else {
-    clearInterval(intervalId);
-    intervalId = null;
-  }
-  saveId();
-  return intervalId;
+    if (!intervalId) {
+      // alert('null')
+      intervalId = setInterval(() => {
+        let elems = [...document.querySelectorAll(".CwaK9")];
+        if (elems.length > 0) {
+          elems[1].click();
+        }
+      }, 1000);
+    //   alert(intervalId);
+    } else {
+      // alert('not null')
+      clearInterval(intervalId);
+      intervalId = null;
+    }
+    saveId(intervalId);
+    setButtonStyle(intervalId);
+  });
 };
 
 const setButtonStyle = (result) => {
-  if (result == "") {
+  if (result) {
+    //   alert('null')
     start.style.backgroundColor = red;
     document.body.style.borderBottom = "7px solid " + green;
     start.innerText = "stop";
   } else {
+    //   alert('not null')
     start.style.backgroundColor = green;
     document.body.style.borderBottom = "7px solid " + red;
     start.innerText = "start";
   }
 };
 
-const start = document.querySelector("#start");
-start.addEventListener("click", () => {
-  chrome.tabs.executeScript(
-    {
-      code: "(" + accept + ")();",
-    },
-    (result) => {
-      setButtonStyle(result);
-    }
-  );
+document.querySelector("#start").addEventListener("click", restoreId);
+chrome.storage.sync.get("intervalId", ({ intervalId }) => {
+  setButtonStyle(intervalId);
 });
-
-restoreId();
