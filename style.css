@@ -13,14 +13,19 @@
   width: 200px;
   height: 200px;
   border: 1px solid #ccc;
+  background-color: #ccc;
+  
 }
 
 .start {
   padding: 0.5rem 2rem;
-  background-color: red;
+  background-color: teal;
   color: #fff;
   border: none;
   outline: none;
   border-radius: 10px;
   cursor: pointer;
+  transition: all 0.3s;
 }
+
+
