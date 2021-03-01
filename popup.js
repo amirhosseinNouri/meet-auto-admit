@@ -9,9 +9,7 @@ const handleClick = () => {
   chrome.storage.sync.get("intervalId", ({ intervalId }) => {
     if (!intervalId) {
       intervalId = setInterval(() => {
-        chrome.tabs.executeScript(null, {}, function () {
-          chrome.tabs.executeScript(null, { file: "custom.js" });
-        });
+        chrome.tabs.executeScript(null, { file: "custom.js" });
       }, 1000);
     } else {
       clearInterval(intervalId);
