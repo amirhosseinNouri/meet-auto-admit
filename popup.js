@@ -28,6 +28,18 @@ const accept = () => {
   return intervalId;
 };
 
+const setButtonStyle = (result) => {
+  if (result == "") {
+    start.style.backgroundColor = red;
+    document.body.style.borderBottom = "7px solid " + green;
+    start.innerText = "stop";
+  } else {
+    start.style.backgroundColor = green;
+    document.body.style.borderBottom = "7px solid " + red;
+    start.innerText = "start";
+  }
+};
+
 const start = document.querySelector("#start");
 start.addEventListener("click", () => {
   chrome.tabs.executeScript(
@@ -35,15 +47,7 @@ start.addEventListener("click", () => {
       code: "(" + accept + ")();",
     },
     (result) => {
-      if (result == "") {
-        start.style.backgroundColor = red;
-        document.body.style.borderBottom = "7px solid " + green;
-        start.innerText = "stop";
-      } else {
-        start.style.backgroundColor = green;
-        document.body.style.borderBottom = "7px solid " + red;
-        start.innerText = "start";
-      }
+      setButtonStyle(result);
     }
   );
 });
