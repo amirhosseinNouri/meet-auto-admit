@@ -4,7 +4,7 @@ Use this extension to automate google meet admission.
 
 It only works with the meet.google.com URL.
 
-Thanks to @rsharifnasab for his great [gist](https://gist.github.com/rsharifnasab/50d0a7c301bd2fb51f418aa1019fa67b).
+Thanks to [rsharifnasab](https://github.com/rsharifnasab) for his great [gist](https://gist.github.com/rsharifnasab/50d0a7c301bd2fb51f418aa1019fa67b).
 
 ## How to install
 
