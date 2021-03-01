@@ -7,7 +7,7 @@
 }
 
 body {
-  border-bottom: 17px solid #da3f2c;
+  /* border-bottom: 12px solid #da3f2c; */
   transition: all 0.3s;
 }
 
@@ -61,4 +61,62 @@ body {
   display: inline-block;
   width: 20px;
   height: 20px;
+}
+
+.color-border {
+  height: 10px;
+  background-color: #da3f2c;
+}
+
+.color-border--green {
+  background: linear-gradient(270deg, #34a895, #2c645b);
+  background-size: 400% 400%;
+  -webkit-animation: AnimationName 2s ease infinite;
+  -moz-animation: AnimationName 2s ease infinite;
+  -o-animation: AnimationName 2s ease infinite;
+  animation: AnimationName 2s ease infinite;
+}
+@-webkit-keyframes AnimationName {
+  0% {
+    background-position: 0% 51%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 51%;
+  }
+}
+@-moz-keyframes AnimationName {
+  0% {
+    background-position: 0% 51%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 51%;
+  }
+}
+@-o-keyframes AnimationName {
+  0% {
+    background-position: 0% 51%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 51%;
+  }
+}
+@keyframes AnimationName {
+  0% {
+    background-position: 0% 51%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 51%;
+  }
 }
