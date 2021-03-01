@@ -37,11 +37,11 @@ start.addEventListener("click", () => {
     (result) => {
       if (result == "") {
         start.style.backgroundColor = red;
-        document.body.style.border = "3px solid " + green;
+        document.body.style.borderBottom = "7px solid " + green;
         start.innerText = "stop";
       } else {
         start.style.backgroundColor = green;
-        document.body.style.border = "3px solid " + red;
+        document.body.style.borderBottom = "7px solid " + red;
         start.innerText = "start";
       }
     }
