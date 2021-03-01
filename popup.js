@@ -2,49 +2,41 @@ const red = "#DA3F2C";
 const green = "#2C645B";
 
 const saveId = (value) => {
-  chrome.storage.sync.set({ intervalId: value }, function () {
-    //   alert('saved')
-  });
+  chrome.storage.sync.set({ intervalId: value }, function () {});
 };
 
-const restoreId = () => {
-  chrome.storage.sync.get("intervalId", (data) => {
-    let { intervalId } = data;
-
+const handleClick = () => {
+  chrome.storage.sync.get("intervalId", ({ intervalId }) => {
     if (!intervalId) {
-      // alert('null')
       intervalId = setInterval(() => {
-        let elems = [...document.querySelectorAll(".CwaK9")];
-        if (elems.length > 0) {
-          elems[1].click();
-        }
+        chrome.tabs.executeScript(null, {}, function () {
+          chrome.tabs.executeScript(null, { file: "custom.js" });
+        });
       }, 1000);
-    //   alert(intervalId);
     } else {
-      // alert('not null')
       clearInterval(intervalId);
       intervalId = null;
     }
     saveId(intervalId);
-    setButtonStyle(intervalId);
+    changeButtonStyle(intervalId);
   });
 };
 
-const setButtonStyle = (result) => {
+const changeButtonStyle = (result) => {
   if (result) {
-    //   alert('null')
     start.style.backgroundColor = red;
     document.body.style.borderBottom = "7px solid " + green;
     start.innerText = "stop";
   } else {
-    //   alert('not null')
     start.style.backgroundColor = green;
     document.body.style.borderBottom = "7px solid " + red;
     start.innerText = "start";
   }
 };
 
-document.querySelector("#start").addEventListener("click", restoreId);
+document.querySelector("#start").addEventListener("click", handleClick);
+
+// Initialize the intervalId.
 chrome.storage.sync.get("intervalId", ({ intervalId }) => {
-  setButtonStyle(intervalId);
+  changeButtonStyle(intervalId);
 });
