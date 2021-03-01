@@ -5,11 +5,10 @@
   "description": "Use this extension to auto admit google meet's invitation",
   "version": "1.0",
 
-  "permissions": ["activeTab", "declarativeContent", "storage"],
+  "permissions": ["activeTab", "storage"],
 
   "background": {
-    "scripts": ["background.js"],
-    "persistent": false
+    "scripts": ["background.js"]
   },
   "page_action": {
     "default_popup": "popup.html",
