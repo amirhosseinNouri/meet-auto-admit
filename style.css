@@ -6,26 +6,60 @@
   box-sizing: border-box;
 }
 
+body {
+    border : 3px solid #2C645B;
+}
+
+.header {
+    text-align: center;
+    padding : 1rem;
+}
+
+.header__title {
+    font-weight: normal;
+    font-size: 1.3rem;
+}
+
 .container {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 200px;
-  height: 200px;
-  border: 1px solid #ccc;
-  background-color: #ccc;
-  
+  height: 150px;
+
 }
 
 .start {
-  padding: 0.5rem 2rem;
+    box-shadow: 0 0 20px 10px #f3f3f3;
+  padding: 0.5rem 2.2rem;
   background-color: teal;
   color: #fff;
   border: none;
   outline: none;
-  border-radius: 10px;
+  border-radius: 5px;
   cursor: pointer;
   transition: all 0.3s;
+  font-size: 17px;
+  text-transform: capitalize;
+  letter-spacing: 2px;
 }
 
+.footer {
+    padding : 0 1rem 0.2rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
 
+.footer__text{
+    margin-right: 0.5rem;
+    color : #777;
+
+}
+
+.footer__icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+}
