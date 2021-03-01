@@ -27,15 +27,14 @@ const changeButtonStyle = (result) => {
     start.style.backgroundColor = red;
 
     colorBorder.classList.add("color-border--green");
-    // document.body.style.borderBottom = "12px solid " + green;
+
     start.innerText = "stop";
   } else {
     start.style.backgroundColor = green;
-    // document.body.style.borderBottom = "12px solid " + red;
+
     start.innerText = "start";
     colorBorder.classList.remove("color-border--green");
   }
-  
 };
 
 document.querySelector("#start").addEventListener("click", handleClick);
