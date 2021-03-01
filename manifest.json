@@ -5,7 +5,7 @@
   "description": "Use this extension to auto admit google meet's invitation",
   "version": "1.0",
 
-  "permissions": ["activeTab", "storage"],
+  "permissions": ["activeTab", "declarativeContent", "storage"],
 
   "background": {
     "scripts": ["background.js"]
