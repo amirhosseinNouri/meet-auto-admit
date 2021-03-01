@@ -15,9 +15,9 @@ There is two way to install this extension on chrome and chromium browsers.
 
 1. Clone the repo. (`git clone https://github.com/amirhosseinNouri/meet-auto-admit`) or download it.
 2. Go to [manage extensions](chrome://extensions/).
-3. Click on "Load unpacked" at the above.
+3. Click on "Load unpacked" at the top.
 4. Select the extension directory.
-
+5. Enjoy.
 ### Firefox
 
 Not supported yet.
