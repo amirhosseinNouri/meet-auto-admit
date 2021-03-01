@@ -12,12 +12,6 @@ Thanks to [rsharifnasab](https://github.com/rsharifnasab) for his great [gist](h
 
 There is two way to install this extension on chrome and chromium browsers.
 
-Approach 1:
-
-1. Clone the repo. (`git clone https://github.com/amirhosseinNouri/meet-auto-admit`) or download it.
-2. Drag and drop chrome-crx/meet-auto-admit.crx to your browser.
-
-Approach 2:
 
 1. Clone the repo. (`git clone https://github.com/amirhosseinNouri/meet-auto-admit`) or download it.
 2. Go to [manage extensions](chrome://extensions/).
